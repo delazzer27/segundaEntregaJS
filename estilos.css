@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+}
+
+.rowReverse {
+    flex-direction: row-reverse;
+}
+
+body {
+    background-color: #eff0f4;
+    
+}
+
+.fondoImagen {
+    background-image: url(./Img/fondo3.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    background-color: rgba(224, 203, 203, 0.5);
+    height: 50px;
+    font-family: "Raleway";
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+h2 {
+    font-family: "Raleway";
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    font-family: "Raleway";
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+p {
+    font-family: "Roboto";
+    font-size: 15px;
+    text-align: justify !important;
+}
+
+.cajaIndex {
+    background-color: rgba(255, 255, 255, 0.8);  
+    height: 200px;
+    border-radius: 6px;
+}
+footer {
+    height: 25px;
+}
+
+.espacio {
+    margin: 2rem;
+}
+
+header, footer {
+    background: rgb(48, 48, 96) ;
+}
+
+main section section {
+    height: 500px;
+    padding-top: 8rem;
+}
+
+.carousel-control-prev-icon {
+    margin-right: 5rem;
+}
+.carousel-control-next-icon {
+    margin-left: 5rem;
+}
