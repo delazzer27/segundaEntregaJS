@@ -200,3 +200,6 @@ function seguirBuscando() {
     }
 }
 seguirBuscando();
+
+const totalPrecio = listaCursos.reduce ((acumulador, obj)=> acumulador + obj.precio, 0);
+console.log (`El precio total a pagar es de ${totalPrecio} y realizara ${listaCursos.length} cursos`);
