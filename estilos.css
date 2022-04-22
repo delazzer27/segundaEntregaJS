@@ -26,6 +26,7 @@ h1 {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 5px;
+    padding-left: 1rem;
 }
 
 h2 {
@@ -75,4 +76,20 @@ main section section {
 }
 .carousel-control-next-icon {
     margin-left: 5rem;
+}
+
+.boton {
+    background-color: rgb(238, 201, 34);
+}
+
+.boton:hover {
+    background: rgb(48, 48, 96) ;
+    color: white;
+}
+
+.vacio:focus {
+    border-color: rgb(255, 144, 0);
+}
+.validado :focus {
+    border-color: green;
 }
