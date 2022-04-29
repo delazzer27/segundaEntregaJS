@@ -93,3 +93,7 @@ main section section {
 .validado :focus {
     border-color: green;
 }
+
+.filter {
+    display: none;
+}
