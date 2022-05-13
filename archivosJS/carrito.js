@@ -115,6 +115,6 @@ carritoOverlay.onclick =(e)=> {
     }
 }
 // asignarle a cada boton, su funcion
-for ( boton of addToCart) {
+for ( const boton of addToCart) {
     console.log(boton)
 }
