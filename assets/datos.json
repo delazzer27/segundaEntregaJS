@@ -1,12 +1,13 @@
 [
-{"materia": "matematica", "precio": 700},
-{"materia": "fisica", "precio": 650},
-{"materia": "historia", "precio": 1000},
-{"materia": "ingles", "precio": 900},
-{"materia": "literatura", "precio": 600},
-{"materia": "historia", "precio": 1100},
-{"materia": "quimica", "precio": 800},
-{"materia": "matematica", "precio": 900}
+{"materia": "matematica", "precio": 700, "id":1},
+{"materia": "fisica", "precio": 650, "id":2},
+{"materia": "historia", "precio": 1000, "id":3},
+{"materia": "ingles", "precio": 900, "id":4},
+{"materia": "literatura", "precio": 600, "id":5},
+{"materia": "historia", "precio": 1100, "id":6},
+{"materia": "quimica", "precio": 800, "id":7},
+{"materia": "matematica", "precio": 900, "id":8},
+{"materia": "literatura", "precio": 950, "id":9}
 ]
 
 
