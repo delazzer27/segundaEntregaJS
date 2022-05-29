@@ -1,98 +1,124 @@
-class Docentes {
-    constructor(nombre, edad, materias, precio) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.materias = materias;
-        this.precio = precio;
-    }
-    bio = () => {
-        console.log(`${this.nombre} tiene ${this.edad}, da clases de ${this.materias} y cobra ${this.precio} pesos la hora`);
-    }
-}
-const nuevoDocente = () => {
-    let nombre = prompt("¿Cuál es tu nombre?");
-    let edad = prompt("¿Cuántos años tenés?");
-    let materias = prompt("¿Qué materias das?");
-    let precio = parseFloat(prompt("¿Cúanto cobras la hora?"));
-    let bioDocente = new Docentes(nombre, edad, materias, precio);
-    console.log(bioDocente.bio());
-}
+//VARIABLES
+const carrito = document.querySelector("#cart");
+const carritoOverlay = document.querySelector(".cart-modal-overlay");
+const cerrarCarrito = document.querySelector("#close-btn");
+const productRows = document.getElementsByClassName("product-row");
+//boton comprar
+let btnComprar = document.querySelector(".purchase-btn");
 
-class Alumnos {
-    constructor(nombre, edad, materias) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.materias = materias;
+// ABRIR CARRITO 
+carrito.addEventListener("click", () => {
+    if (!carritoOverlay.classList.contains("open")) {
+        carritoOverlay.classList.add("open")
+    } else {
+        carritoOverlay.classList.remove("open")
     }
-    bio = () => {
-        console.log(`${this.nombre} tiene ${this.edad}, necesita ayuda en ${this.materias}`);
-    }
+})
+// CERRAR CARRITO 
+cerrarCarrito.onclick = () => {
+    carritoOverlay.classList.remove("open");
 }
-const nuevoAlumno = () => {
-    let nombre = prompt("¿Cuál es tu nombre?");
-    let edad = prompt("¿Cuántos años tenés?");
-    let materias = prompt("¿En qué materias necesitas ayuda?");
-    let bioAlumno = new Alumnos(nombre, edad, materias);
-    console.log(bioAlumno.bio());
-}
-
-function docenteAlumno() {
-    let rol = prompt("¿Sos estudiante o docente?");
-    rol = rol.toLowerCase();
-    switch (rol) {
-        case "docente":
-            nuevoDocente();
-            break;
-        case "estudiante":
-            nuevoAlumno();
-            break;
-        default:
-            alert("¡Navega por la pagina y descubre el mundo de clases que hay!");
-            break;
+carritoOverlay.onclick = (e) => {
+    if (e.target.classList.contains("cart-modal-overlay")) {
+        carritoOverlay.classList.remove("open")
     }
 }
 
-
-let listaCursos = [];
-class CursoProd {
-    constructor(materia, docente, precio) {
-        this.materia = materia;
-        this.docente = docente;
-        this.precio = precio;
+//eliminar elementos
+function removeItem(e) {
+    let btnCliked = e.target;
+    btnCliked.parentElement.parentElement.remove();
+    updatePrice();
+    let boton = e.target;
+    let cartItem = boton.parentElement;
+    let prodId = cartItem.getAttribute("id"); //me trae el id del que elimine 
+    //Actualizar local storage 
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    let cartActual = cart.filter((item) => item.id !== prodId)
+    cartActual = localStorage.setItem("cart", JSON.stringify(cartActual))
+    //Actualizar precio local storage si se borra un product 
+    let cartCost = localStorage.getItem("precio");
+    let cartElim = cart.filter((item) => item.id == prodId)
+    for (const producto of cartElim) {
+        let price = producto.precio;
+        let cantidad = producto.horas;
+        let cartCostActual = localStorage.setItem("precio", cartCost - price * cantidad);
+        // Actualizar cant prod si se borra un product 
+        let cartQuantity = localStorage.getItem("cartCantidad");
+        cartQuantity = parseInt(cartQuantity);
+        if (cartQuantity) {
+            localStorage.setItem("cartCantidad", cartQuantity - 1);
+            document.querySelector(".cart-quantity").textContent = cartQuantity - 1;
+        }
     }
 }
-const agregarCurso = () => {
-    let materia = prompt("¿En qué materia necesitas ayuda?");
-    let docente = prompt("¿Con qué docente lo vas a hacer?");
-    let precio = parseFloat(prompt("¿Cuánto sale el curso?"));
-    let clase = new CursoProd(materia, docente, precio);
-    listaCursos.push(clase);
-}
 
-
-const consultarPorNuevoCurso = () => {
-    let pregunta = confirm("¿Vas a querer arrancar un curso? Coloca solamente una materia");
-    while (pregunta !== false) {
-        agregarCurso();
-        pregunta = confirm("¿Vas a querer arrancar un nuevo curso?");
+// actualizar el total
+function updatePrice() {
+    let total = 0;
+    for (const producto of productRows) {
+        let price = parseFloat(producto.querySelector(".cart-price").innerText.replace("$", ""));
+        let cantidad = parseInt(producto.querySelector(".cart-cantidad").innerText);
+        total += price * cantidad;
     }
-    console.log(listaCursos);
-    console.log("¡Muchas gracias por visitar nuestra página!")
-    const totalPrecio = listaCursos.reduce((acumulador, obj) => acumulador + obj.precio, 0);
-console.log(`El precio total a pagar es de ${totalPrecio} y realizara ${listaCursos.length} cursos`);
+    document.querySelector(".total-price").innerText = "$" + total;
+    document.querySelector(".cart-quantity").textContent = productRows.length;
 }
 
-
-
-let nombre = prompt ("¿Cómo te llamas?");
-let saludo = document.querySelector (".bienvenido");
-saludo.innerText = `¡Bienvenido ${nombre} a Mundo Clases, navega y encontra el curso y el docente para vos!`;
-
-const boton = document.querySelector(".boton");
-boton.onclick = (e) => {
-    e.preventDefault ();
-    alert ("Ya no hay vacantes para este curso");
+function updateCart() {
+    fetch("datos.json")
+    .then(response => response.json())
+    .then(resultado => {
+        let dato = resultado;
+        dato.forEach(element => {
+            let imagen = element.imagen;
+            let id = element.id;
+            let productoCantidad = localStorage.getItem("cartCantidad");
+    document.querySelector(".cart-quantity").textContent = productoCantidad;
+    let cart = JSON.parse(localStorage.getItem("cart") || 0); //me da un array de objs
+    for (i = 0; i < cart.length; i++) {
+        let productId = cart[i].id;
+        let productName = cart[i].materia;
+        let productPrice = cart[i].precio;
+        let cantidad = cart[i].horas;
+        if (productId == id) {
+            function actualizarElem() {
+                let productRow = document.createElement("div");
+                let productRows = document.querySelector(".product-rows");
+                //inyectar el html al carrito
+                let cartRowItem = `
+                    <div class="product-row" id="${productId}">
+                        <img class="cart-image" src="${imagen}">
+                        <span class ="cart-name">${productName}</span>
+                        <span class="cart-price">${productPrice}</span>
+                        <span class="cart-cantidad">${cantidad}hs</span>
+                        <button class="remove-btn">Borrar</button>
+                    </div>
+                `
+                productRow.innerHTML = cartRowItem;
+                productRows.append(productRow);
+                productRow.querySelector(".remove-btn").addEventListener("click", removeItem);
+            }
+            actualizarElem();
+        }
+        let cartCost = localStorage.getItem("precio") || 0;
+        document.querySelector(".total-price").innerText = "$" + cartCost;
+        }
+        })
+        
+    })
+    .catch(error => console.log(error));
 }
+updateCart()
 
-
-
+//Click al comprar 
+btnComprar.addEventListener("click", () => {
+    swal("Compra realizada", "¡Muchas gracias! Podés seguir navengando por nuestra página");
+    localStorage.removeItem('cart');
+    localStorage.removeItem('precio');
+    localStorage.removeItem('cartCantidad');
+    setTimeout(() => {
+        document.location.reload()
+        updateCart()
+    }, 2000)
+})

@@ -80,6 +80,7 @@ main section section {
 
 .boton {
     background-color: rgb(238, 201, 34);
+
 }
 
 .boton:hover {
@@ -95,17 +96,19 @@ main section section {
     display: flex;
 }
 
+
 /* ESTILOS CARRITO  */
 .cart-btn {
     display: flex;
     justify-content: flex-end;
+    text-decoration: none;
   }
   
   #cart {
     position: relative;
     font-size: 2rem;
     cursor: pointer;
-    margin: 1em 2em 0 0;
+    /* margin: 1em 2em 0 0; */
   }
   
   .cart-quantity {
@@ -113,7 +116,8 @@ main section section {
     background-color: red;
     padding: .2em .3em;
     position: absolute;
-    margin: .8em 7.5em 0 0;
+    margin: -15px 50px 0px 0px;
+    /* margin: .8em 7.5em 0 0; */
     right: 0;
     border: solid 2px red;
     border-radius: 15px;
@@ -122,14 +126,14 @@ main section section {
 
   .cart-modal-overlay {
     position: fixed;
-    width: 100vw;
+    width: 94vw;
     height: 100%;
     z-index: 2;
-    transform: translateY(-200%) !important;
+    transform: translateY(-200%);
     transition: .5s ease-out;
   }
   .cart-modal-overlay.open {
-    transform: translateY(60%) !important;
+    transform: translateY(56%);
   }
   .cart-modal {
     height: 100vh;
@@ -184,4 +188,52 @@ main section section {
     margin: .5em 4em 0 0;
     color: white;
     cursor: pointer;
+  }
+  .cart-image {
+    width: 150px;
+    margin: 1rem;
+  }
+  .product-quantity {
+    width: 2rem;
+    height: 1.2rem;
+    font-size: 1rem;
+    margin-left: 3rem;
+  }
+  .remove-btn {
+    padding: 1em 2em;
+    background-color: red;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 3rem;
+    font-weight: bolder;
+    font-size: 1rem;
+  }
+  
+  .remove-btn:active {
+    transform: translateY(5px);
+  }
+  .cart-price {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+  .product-rows {
+    margin-top: 3em;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  
+  .product-row {
+    display: flex;
+    align-items: center;
+  }
+  .cart-cantidad {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding-left: 1rem;
   }

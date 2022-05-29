@@ -1,147 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo clases</title>
-    <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mundo clases</title>
+  <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Roboto+Slab:wght@100&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
+
 <body>
-    <header class="p-3 text-white">
-        <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-            </a>
-    
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="index.html" class="nav-link px-2 text-secondary">Inicio</a></li>
-              <li><a href="./assets/clasesConCarrito2.html" class="nav-link px-2 text-white">Clases</a></li>
-              <li><a href="./assets/contacto.html" class="nav-link px-2 text-white">Contacto</a></li>
-            </ul>
-    
-            <div class="text-end">
-              <button type="button" class="btn btn-outline-light me-2">Iniciar sesión</button>
-              <button type="button" class="btn btn-warning">Registrarse</button>
+  <header class="p-3 text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="index.html" class="nav-link px-2 text-secondary">Inicio</a></li>
+          <li><a href="/assets/clasesConCarrito3.html" class="nav-link px-2 text-white">Clases</a></li>
+          <li><a href="/assets/contacto.html" class="nav-link px-2 text-white">Contacto</a></li>
+        </ul>
+
+        <div class="text-end flex">
+          <button type="button" class="btn btn-outline-light me-2">Iniciar sesión</button>
+          <button type="button" class="btn btn-warning">Registrarse</button>
+        </div>
+        <!--  cart modal  -->
+        <div class="cart-modal-overlay">
+          <div class="cart-modal">
+            <i id="close-btn" class="fas fa-times"></i>
+            <h2 class="cart-is-empty">El carrito esta vacio</h2>
+
+            <div class="product-rows">
+            </div>
+            <div class="total">
+              <h2 class="cart-total">TOTAL</h2>
+              <span class="total-price">$0</span>
+              <button class="purchase-btn">COMPRAR</button>
             </div>
           </div>
         </div>
-      </header>
+        <!--   end of cart modal -->
+        <!--CARRITO-->
+        <a class="cart-btn">
+          <i id="cart" class="fas fa-shopping-cart"></i>
+          <span class="cart-quantity">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
 
-    <main>
-      <section class="fondoImagen">
-        <h1>Mundo clases</h1>
-        <h2 class="px-3 pt-3 w-50 bienvenido">¡Bienvenido a Mundo Clases, navega y encontra el curso y el docente para vos!</h2>
-        <section>
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="container">
-                        <div class="row">
-                          <div class="col cajaIndex mx-2">
-                            <h3>Apoyo escolar y universitario</h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis inventore nobis voluptas maiores aspernatur, unde alias totam cumque quos id, suscipit eveniet hic culpa aut, laudantium sed repellendus iste?</p>
-                          </div>
-                          <div class="col cajaIndex mx-2">
-                            <h3>Todas las materias</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat saepe necessitatibus perspiciatis dolorem aliquid accusantium dignissimos sed harum impedit quia praesentium, cumque esse doloremque facere magni obcaecati vel qui iure.</p>
-                          </div>
-                          <div class="col cajaIndex mx-2">
-                            <h3>Clases online y prenseciales </h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio quos quia eius iste laudantium est dicta earum sunt soluta. Provident laudantium vero quo odit maiores dolore veniam necessitatibus soluta quae.</p>
-                          </div>
-                        </div>
-                      </div>
+  <main>
+    <section class="fondoImagen">
+      <h1>Mundo clases</h1>
+      <h2 class="px-3 pt-3 w-50 bienvenido">¡Bienvenido a Mundo Clases, navega y encontra el curso y el docente para
+        vos!</h2>
+      <section>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row">
+                  <div class="col cajaIndex mx-2">
+                    <h3>Apoyo escolar y universitario</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis inventore nobis
+                      voluptas maiores aspernatur, unde alias totam cumque quos id, suscipit eveniet hic culpa aut,
+                      laudantium sed repellendus iste?</p>
                   </div>
-                  <div class="carousel-item">
-                    <div class="container">
-                        <div class="row">
-                          <div class="col cajaIndex mx-2">
-                            <h3>En cualquier parte del mundo</h3>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis inventore nobis voluptas maiores aspernatur, unde alias totam cumque quos id, suscipit eveniet hic culpa aut, laudantium sed repellendus iste?</p>
-                          </div>
-                          <div class="col cajaIndex mx-2">
-                            <h3>Todo tipo de clases</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat saepe necessitatibus perspiciatis dolorem aliquid accusantium dignissimos sed harum impedit quia praesentium, cumque esse doloremque facere magni obcaecati vel qui iure.</p>
-                          </div>
-                          <div class="col cajaIndex mx-2">
-                            <h3>Los mejores docentes</h3>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio quos quia eius iste laudantium est dicta earum sunt soluta. Provident laudantium vero quo odit maiores dolore veniam necessitatibus soluta quae.</p>
-                          </div>
-                        </div>
-                      </div>
+                  <div class="col cajaIndex mx-2">
+                    <h3>Todas las materias</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat saepe necessitatibus
+                      perspiciatis dolorem aliquid accusantium dignissimos sed harum impedit quia praesentium, cumque
+                      esse doloremque facere magni obcaecati vel qui iure.</p>
+                  </div>
+                  <div class="col cajaIndex mx-2">
+                    <h3>Clases online y prenseciales </h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio quos quia eius iste laudantium est
+                      dicta earum sunt soluta. Provident laudantium vero quo odit maiores dolore veniam necessitatibus
+                      soluta quae.</p>
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
               </div>
-        </section>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col cajaIndex mx-2">
+                    <h3>En cualquier parte del mundo</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis inventore nobis
+                      voluptas maiores aspernatur, unde alias totam cumque quos id, suscipit eveniet hic culpa aut,
+                      laudantium sed repellendus iste?</p>
+                  </div>
+                  <div class="col cajaIndex mx-2">
+                    <h3>Todo tipo de clases</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat saepe necessitatibus
+                      perspiciatis dolorem aliquid accusantium dignissimos sed harum impedit quia praesentium, cumque
+                      esse doloremque facere magni obcaecati vel qui iure.</p>
+                  </div>
+                  <div class="col cajaIndex mx-2">
+                    <h3>Los mejores docentes</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio quos quia eius iste laudantium est
+                      dicta earum sunt soluta. Provident laudantium vero quo odit maiores dolore veniam necessitatibus
+                      soluta quae.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </section>
-        
-        <section class="espacio">
-            <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <img src="./Img/clase1.jpg" alt="imagen clase online">
-                  </div>
-                  <div class="col text-justify">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque commodi sed?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque commodi sed?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque commodi sed?</p>
-                    <button type="button" class="btn boton">¡Comenzar!</button>
-                  </div>
-                </div>
-              </div>
-        </section>
-        <section class="espacio">
-            <div class="container">
-                <div class="row rowReverse">
-                  <div class="col">
-                    <img src="./Img/clase3.jpg" alt="imagen clase online">
-                  </div>
-                  <div class="col text-justify">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque commodi sed?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque commodi sed?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque commodi sed?</p>
-                    <button type="button" class="btn boton">¡Comenzar!</button>
-                  </div>
-                </div>
-              </div>
-        </section>
-        <section class="espacio">
-            <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <img src="./Img/clase4.jpg" alt="imagen clase online">
-                  </div>
-                  <div class="col">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque commodi sed?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque commodi sed?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque commodi sed?</p>
-                    <button type="button" class="btn boton">¡Comenzar!</button>
-                  </div>
-                </div>
-              </div>
-        </section>
+    </section>
 
-    </main>
-    <footer class="text-white ps-2">
-        <p>&copy; Copyright 2022, desarrollado por Tomás A. De Lazzer | Todos los derechos reservados</p>
-    </footer>
+    <section class="espacio">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <img src="./Img/clase1.jpg" alt="imagen clase online">
+          </div>
+          <div class="col text-justify">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem
+              dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque
+              commodi sed?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem
+              dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque
+              commodi sed?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem
+              dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque
+              commodi sed?</p>
+            <button type="button" class="btn boton">¡Comenzar!</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="espacio">
+      <div class="container">
+        <div class="row rowReverse">
+          <div class="col">
+            <img src="./Img/clase3.jpg" alt="imagen clase online">
+          </div>
+          <div class="col text-justify">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem
+              dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque
+              commodi sed?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem
+              dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque
+              commodi sed?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem
+              dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque
+              commodi sed?</p>
+            <button type="button" class="btn boton">¡Comenzar!</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="espacio">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <img src="./Img/clase4.jpg" alt="imagen clase online">
+          </div>
+          <div class="col">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem
+              dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque
+              commodi sed?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem
+              dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque
+              commodi sed?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est autem ab dolorem maiores voluptatem
+              dolores? Accusantium excepturi obcaecati labore ad. Accusamus fugit earum saepe, amet at magni itaque
+              commodi sed?</p>
+            <button type="button" class="btn boton">¡Comenzar!</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="bootstrap-5.1.3-dist/js/bootstrap.js"></script>
-    <script src="./main.js"></script>
+  </main>
+  <footer class="text-white ps-2">
+    <p>&copy; Copyright 2022, desarrollado por Tomás A. De Lazzer | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="./main.js"></script>
+
 </body>
+
 </html>

@@ -1,13 +1,13 @@
 [
-{"materia": "matematica", "precio": 700, "id":1},
-{"materia": "fisica", "precio": 650, "id":2},
-{"materia": "historia", "precio": 1000, "id":3},
-{"materia": "ingles", "precio": 900, "id":4},
-{"materia": "literatura", "precio": 600, "id":5},
-{"materia": "historia", "precio": 1100, "id":6},
-{"materia": "quimica", "precio": 800, "id":7},
-{"materia": "matematica", "precio": 900, "id":8},
-{"materia": "literatura", "precio": 950, "id":9}
+{"materia": "matematica", "precio": 700, "id":1, "imagen":"/imgs editadas/curso1.png"},
+{"materia": "fisica", "precio": 650, "id":2, "imagen":"/imgs editadas/curso2.png"},
+{"materia": "historia", "precio": 1000, "id":3, "imagen":"/imgs editadas/curso3.png"},
+{"materia": "ingles", "precio": 900, "id":4, "imagen":"/imgs editadas/curso4.png"},
+{"materia": "literatura", "precio": 600, "id":5, "imagen":"/imgs editadas/curso5.png"},
+{"materia": "historia", "precio": 1100, "id":6, "imagen":"/imgs editadas/curso6.png"},
+{"materia": "quimica", "precio": 800, "id":7, "imagen":"/imgs editadas/curso7.png"},
+{"materia": "matematica", "precio": 900, "id":8, "imagen":"/imgs editadas/curso8.png"},
+{"materia": "literatura", "precio": 950, "id":9, "imagen":"/imgs editadas/curso9.png"}
 ]
 
 
