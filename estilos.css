@@ -96,8 +96,10 @@ main section section {
     display: flex;
 }
 
+.pTamanio {
+  font-size: 17px;
+}
 
-/* ESTILOS CARRITO  */
 .cart-btn {
     display: flex;
     justify-content: flex-end;
@@ -117,7 +119,6 @@ main section section {
     padding: .2em .3em;
     position: absolute;
     margin: -15px 50px 0px 0px;
-    /* margin: .8em 7.5em 0 0; */
     right: 0;
     border: solid 2px red;
     border-radius: 15px;
@@ -179,7 +180,7 @@ main section section {
     outline: none;
     border: none;
     cursor: pointer;
-    margin: 2em 0 1em 0;
+    margin: 1em 0 3em 0;
   }
   
   #close-btn {

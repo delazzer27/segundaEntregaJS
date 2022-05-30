@@ -108,6 +108,13 @@ function updateCart() {
         
     })
     .catch(error => console.log(error));
+    let saludo = document.querySelector (".bienvenido");
+    let usuario = localStorage.getItem("nombre");
+    if (usuario == null){
+        saludo.innerText = `¡Bienvenido a Mundo Clases, navega y encontra el curso y el docente para vos!`;
+    } else {
+        saludo.innerText = `¡Bienvenido/a ${usuario} a Mundo Clases, navega y encontra el curso y el docente para vos!`;
+    }
 }
 updateCart()
 
@@ -122,3 +129,33 @@ btnComprar.addEventListener("click", () => {
         updateCart()
     }, 2000)
 })
+
+//iniciar sesion 
+let sesion = document.querySelector("#sesion")
+sesion.addEventListener("click", () => {
+    swal("Ingrese su usuario:", {
+        content: "input",
+      })
+      .then((value) => {
+        if (!value){
+            Toastify({
+                text: "Debe completar el campo si ya es usuario",
+                duration: 3000,
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
+                style: {
+                    background: "linear-gradient(to right, #cb1313, #ce0505)",
+                },
+                onClick: function () {}
+            }).showToast();
+        } else {
+            let saludo = document.querySelector (".bienvenido");
+            saludo.innerText = `¡Bienvenido/a ${value} a Mundo Clases, navega y encontra el curso y el docente para vos!`;
+            let usuario = JSON.stringify(localStorage.setItem("nombre", value))
+        }
+      })
+      .catch(error => console.log(error));
+      })
